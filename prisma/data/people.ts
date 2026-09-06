@@ -25,7 +25,7 @@ export interface PersonSeed {
 export const TERRA_PEOPLE: PersonSeed[] = [
   {
     firstName: "Fouad",
-    lastName: "Nasr",
+    lastName: "Mallat",
     title: "Managing Partner",
     email: "fouad@terracapital.es",
     languages: ["English", "Spanish", "French", "Arabic"],

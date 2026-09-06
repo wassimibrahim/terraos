@@ -158,7 +158,7 @@ async function main() {
   // ── Users ─────────────────────────────────────────────────────────────────
   const passwordHash = await bcrypt.hash("terra", 10);
   const userDefs = [
-    { email: "fouad@terracapital.es", name: "Fouad Nasr", role: "MANAGING_PARTNER" as const, title: "Managing Partner" },
+    { email: "fouad@terracapital.es", name: "Fouad Mallat", role: "MANAGING_PARTNER" as const, title: "Managing Partner" },
     { email: "elena@terracapital.es", name: "Elena Márquez", role: "PARTNER" as const, title: "Partner" },
     { email: "tomas@terracapital.es", name: "Tomás Rivera", role: "ASSOCIATE" as const, title: "Associate" },
     { email: "sofia@terracapital.es", name: "Sofia Lange", role: "ANALYST" as const, title: "Analyst" },
@@ -645,7 +645,7 @@ async function main() {
   for (const p of PEOPLE) await createPerson(p);
   console.log(`  ${people.size} people`);
 
-  const fouadPerson = people.get("Fouad Nasr")!;
+  const fouadPerson = people.get("Fouad Mallat")!;
   const elenaPerson = people.get("Elena Márquez")!;
   const tomasPerson = people.get("Tomás Rivera")!;
   const sofiaPerson = people.get("Sofia Lange")!;
@@ -686,25 +686,25 @@ async function main() {
   }
 
   // Terra → advisers and buy-side
-  await relate("Fouad Nasr", { person: "Elena Vidal" }, "KNOWS", 5, { owner: fouad, origin: "Worked together on a family-business transaction in 2019", lastDaysAgo: 12, notes: "The most reliable route into Madrid family-owned schools." });
-  await relate("Fouad Nasr", { person: "Inés Delgado" }, "KNOWS", 5, { owner: fouad, origin: "Former colleagues", lastDaysAgo: 6 });
-  await relate("Fouad Nasr", { person: "Robert Nkemdirim" }, "KNOWS", 5, { owner: fouad, origin: "Introduced at an education conference in 2021", lastDaysAgo: 47, followUpInDays: 3, notes: "Has not been spoken to in 47 days. Fund III is actively deploying." });
-  await relate("Fouad Nasr", { person: "Patricia Losada" }, "KNOWS", 5, { owner: fouad, origin: "Sale-and-leaseback mandate 2023", lastDaysAgo: 9 });
-  await relate("Fouad Nasr", { person: "Nacho Vega" }, "KNOWS", 5, { owner: fouad, origin: "Advised on two acquisitions", lastDaysAgo: 4 });
-  await relate("Fouad Nasr", { person: "Rebecca Ellison" }, "KNOWS", 4, { owner: fouad, origin: "Conference", lastDaysAgo: 34 });
-  await relate("Fouad Nasr", { person: "Carlos Mendoza" }, "KNOWS", 4, { owner: fouad, lastDaysAgo: 21 });
-  await relate("Fouad Nasr", { person: "Salvador Ripoll" }, "KNOWS", 4, { owner: fouad, origin: "Client referral", lastDaysAgo: 63, followUpInDays: 10 });
-  await relate("Fouad Nasr", { person: "Montserrat Casals" }, "KNOWS", 4, { owner: fouad, lastDaysAgo: 28 });
-  await relate("Fouad Nasr", { person: "Ricardo Peña" }, "KNOWS", 4, { owner: fouad, lastDaysAgo: 40 });
-  await relate("Fouad Nasr", { person: "Andrés Cuéllar" }, "KNOWS", 4, { owner: fouad, origin: "Audits several Madrid family schools", lastDaysAgo: 55, notes: "Sees the accounts of half of family-owned Madrid before anyone else does." });
-  await relate("Fouad Nasr", { person: "Marina Solís" }, "KNOWS", 4, { owner: fouad, lastDaysAgo: 31 });
-  await relate("Fouad Nasr", { person: "Priya Raman" }, "KNOWS", 3, { owner: fouad, lastDaysAgo: 74 });
-  await relate("Fouad Nasr", { person: "James Whitfield" }, "KNOWS", 3, { owner: fouad, lastDaysAgo: 91 });
-  await relate("Fouad Nasr", { person: "Matteo Bellini" }, "KNOWS", 3, { owner: fouad, lastDaysAgo: 120 });
-  await relate("Fouad Nasr", { person: "Omar Al Fahim" }, "KNOWS", 2, { owner: fouad, lastDaysAgo: 210 });
-  await relate("Fouad Nasr", { person: "Ursula Steinmann" }, "KNOWS", 2, { owner: fouad, lastDaysAgo: 260 });
-  await relate("Fouad Nasr", { person: "Khalid Al Muhairi" }, "KNOWS", 3, { owner: fouad, lastDaysAgo: 150 });
-  await relate("Fouad Nasr", { person: "Bruno Ferrán" }, "KNOWS", 3, { owner: fouad, origin: "Property market", lastDaysAgo: 88 });
+  await relate("Fouad Mallat", { person: "Elena Vidal" }, "KNOWS", 5, { owner: fouad, origin: "Worked together on a family-business transaction in 2019", lastDaysAgo: 12, notes: "The most reliable route into Madrid family-owned schools." });
+  await relate("Fouad Mallat", { person: "Inés Delgado" }, "KNOWS", 5, { owner: fouad, origin: "Former colleagues", lastDaysAgo: 6 });
+  await relate("Fouad Mallat", { person: "Robert Nkemdirim" }, "KNOWS", 5, { owner: fouad, origin: "Introduced at an education conference in 2021", lastDaysAgo: 47, followUpInDays: 3, notes: "Has not been spoken to in 47 days. Fund III is actively deploying." });
+  await relate("Fouad Mallat", { person: "Patricia Losada" }, "KNOWS", 5, { owner: fouad, origin: "Sale-and-leaseback mandate 2023", lastDaysAgo: 9 });
+  await relate("Fouad Mallat", { person: "Nacho Vega" }, "KNOWS", 5, { owner: fouad, origin: "Advised on two acquisitions", lastDaysAgo: 4 });
+  await relate("Fouad Mallat", { person: "Rebecca Ellison" }, "KNOWS", 4, { owner: fouad, origin: "Conference", lastDaysAgo: 34 });
+  await relate("Fouad Mallat", { person: "Carlos Mendoza" }, "KNOWS", 4, { owner: fouad, lastDaysAgo: 21 });
+  await relate("Fouad Mallat", { person: "Salvador Ripoll" }, "KNOWS", 4, { owner: fouad, origin: "Client referral", lastDaysAgo: 63, followUpInDays: 10 });
+  await relate("Fouad Mallat", { person: "Montserrat Casals" }, "KNOWS", 4, { owner: fouad, lastDaysAgo: 28 });
+  await relate("Fouad Mallat", { person: "Ricardo Peña" }, "KNOWS", 4, { owner: fouad, lastDaysAgo: 40 });
+  await relate("Fouad Mallat", { person: "Andrés Cuéllar" }, "KNOWS", 4, { owner: fouad, origin: "Audits several Madrid family schools", lastDaysAgo: 55, notes: "Sees the accounts of half of family-owned Madrid before anyone else does." });
+  await relate("Fouad Mallat", { person: "Marina Solís" }, "KNOWS", 4, { owner: fouad, lastDaysAgo: 31 });
+  await relate("Fouad Mallat", { person: "Priya Raman" }, "KNOWS", 3, { owner: fouad, lastDaysAgo: 74 });
+  await relate("Fouad Mallat", { person: "James Whitfield" }, "KNOWS", 3, { owner: fouad, lastDaysAgo: 91 });
+  await relate("Fouad Mallat", { person: "Matteo Bellini" }, "KNOWS", 3, { owner: fouad, lastDaysAgo: 120 });
+  await relate("Fouad Mallat", { person: "Omar Al Fahim" }, "KNOWS", 2, { owner: fouad, lastDaysAgo: 210 });
+  await relate("Fouad Mallat", { person: "Ursula Steinmann" }, "KNOWS", 2, { owner: fouad, lastDaysAgo: 260 });
+  await relate("Fouad Mallat", { person: "Khalid Al Muhairi" }, "KNOWS", 3, { owner: fouad, lastDaysAgo: 150 });
+  await relate("Fouad Mallat", { person: "Bruno Ferrán" }, "KNOWS", 3, { owner: fouad, origin: "Property market", lastDaysAgo: 88 });
 
   await relate("Elena Márquez", { person: "Álex Ferrer" }, "KNOWS", 4, { owner: elena, lastDaysAgo: 18 });
   await relate("Elena Márquez", { person: "Sara Bermúdez" }, "KNOWS", 4, { owner: elena, lastDaysAgo: 11 });
