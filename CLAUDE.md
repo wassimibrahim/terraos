@@ -1,3 +1,14 @@
+# REPO IDENTITY
+
+This repository is TERRA OS. Education capital intelligence and transaction
+operating system.
+It is NOT 65roses. If the task you were given mentions Roses, Stems, the
+atelier, oxblood, chalk, 0065, SERENA, door check-in, or a nightlife
+membership, you are in the wrong repository. Stop and say so.
+Dev port: 3100. Database: terraos_dev.
+
+---
+
 # TERRA OS — working notes
 
 Internal software for Terra Capital: an Education Capital Intelligence and
