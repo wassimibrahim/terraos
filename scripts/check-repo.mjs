@@ -10,6 +10,11 @@
  * it cannot detect that you meant to be in the other one. Its real job is to
  * stop a terraos command from operating on a database that is not terraos —
  * db:reset drops every table without asking, and there is no undo.
+ *
+ * Pass --strict (db:reset does) to also require that a DATABASE_URL exists at
+ * all. Without it, an absent URL is allowed through: a hosted build has no
+ * .env file, and a guard that fails the deploy for that protects nothing while
+ * breaking everything.
  */
 
 import { readFileSync } from "node:fs";
@@ -63,12 +68,21 @@ function readDatabaseUrl() {
 
 const url = readDatabaseUrl();
 
-// No URL at all is a setup problem, not a safety problem — say so and stop.
+// A missing DATABASE_URL is only fatal for a destructive command. Everywhere
+// else it is not this guard's business: a hosted builder supplies the
+// environment at deploy time and has no .env file, and failing the build there
+// protects nobody. Prisma and Next will report a genuinely missing URL far
+// better than this script can.
+const strict = process.argv.includes("--strict");
+
 if (!url) {
-  fail([
-    "No DATABASE_URL found in the environment, .env.local or .env.",
-    "Copy .env.example and set it before running this command.",
-  ]);
+  if (strict) {
+    fail([
+      "No DATABASE_URL found in the environment, .env.local or .env.",
+      "Refusing to run a destructive command without knowing the target.",
+    ]);
+  }
+  process.exit(0);
 }
 
 // Everything after the last slash, minus any query string, is the database.
